@@ -1,5 +1,3 @@
-# Writing an Operating System
-
 ## Intro
 
 As this is the first post on here I will try to give a short introduction about myself and why I started writing my own operating system.
