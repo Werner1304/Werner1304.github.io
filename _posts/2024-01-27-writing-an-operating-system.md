@@ -1,4 +1,4 @@
-# Writing my own OS in Rust
+# Writing an Operating System
 
 ## Intro
 
