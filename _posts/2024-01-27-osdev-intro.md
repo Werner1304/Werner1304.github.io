@@ -10,7 +10,7 @@ Being just 20 at the time and in the middle of my IT apprenticeship I didn't hav
 
 At the time I was really into C++ game and game engine development. One game I actually finished was my try at Ludum Dare 44 , the theme was **Your Life is Currency**. I still think this is one of my better hobby projects, and although I didn't publish it many of my friends back then tried it and gave feedback.
 
-![Life is Currency](game.jpg)
+![Life is Currency](/assets/osdev-intro/game.jpg)
 
 *Screenshot of the game for Ludum Dare 44*
 
@@ -19,7 +19,7 @@ At the time I was really into C++ game and game engine development. One game I a
 After finishing my apprenticeship in late 2020 and joining the company as a normal employee I slowly took over most of the programming related work from a colleague that was about to retire. Every morning at work when checking server logs and backups, seeing all the logs from different OS services (Windows Server btw), I was thinking to myself "it would be so cool making my own OS, writing all these services myself and just understanding how all the OS components work together". This may sound silly, why would I need to know how interrupts work or how a compositor handles all the windows on screen when I'm just writing simple C# programs at work. I really wanted to know. Still watching Kling's videos every now and then I started working on my own operating system using C++. First following the [OSDev Wiki](https://wiki.osdev.org/Main_Page) kind closely, but later just going on my own and implementing functionality how I thought was right, loosely basing it on POSIX. I won't go into much detail about implementing things like interrupts, memory management or scheduling here, but I'll likely do this in future posts.
 Getting used to the build systems was pretty rough, coming from Visual Studio that takes care of most things for you. But it was satisfying to type `make run` in my console for the first time and seeing everything getting compiled and qemu getting launched with the ISO mounted.
 
-![Screenshot of the Desktop](combos_desktop.jpg)
+![Screenshot of the Desktop](/assets/osdev-intro/combos_desktop.jpg)
 
 *Screenshot of the desktop showing taskbar and the `About` application.*
 
@@ -68,13 +68,13 @@ After weeks of trying different solutions to my problem I just said **screw it**
 
 Now that the problem of loading programs was no more I could finally focus on building the user space. I first started with a VGA text mode console and some utilities like `ls`, `ps` and `cat`.
 
-![console](textmode.jpg)
+![console](/assets/osdev-intro/textmode.jpg)
 
 *Screenshot of text mode console*
 
 With some basic utilities done I started work on the `WindowServer`, the program which will combine all GUI windows into a single image to be display on screen and handle all the user generated events like key strokes and mouse clicks. The general strategy used was quite similar to the one used in my previous OS, some minor changes were made to make it play nicer with the rules imposed by Rust. After getting the first window up and running I started work on a GUI library similar to Winforms from the .Net ecosystem. This turned out to be a mistake, as C# a garbage collected language does not impose the same constraints Rust does when it comes to mutability, lifetimes and memory safety. The Winforms approach for my Rust crate led to a lot of `RefCell<Vec<Rc<dyn Widget>>>` related headaches as having lots of shared mutable references to objects does not translate nicely from C# to Rust. Manually setting the X and Y positions as well as the size for each and every widget was also exhausting. At least with C# and Visual Studio you get a visual editor to throw together quick and dirty GUIs.
 
-![Widget Library](widget_library.jpg)
+![Widget Library](/assets/osdev-intro/widget_library.jpg)
 
 *Showcase of most widgets available in the GUI crate*
 
