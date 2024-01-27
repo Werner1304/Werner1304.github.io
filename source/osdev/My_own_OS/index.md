@@ -50,7 +50,7 @@ struct CustomFormatter<StringBuilder>
 {
 	static const char* FormatValue(const StringBuilder& value)
 	{
-		return FormatValue(String::Formatted("StringBuilder{{ size={}, buffer=\"{}\" }}", value.Size(), value.ToString()));
+		return FormatValue(String::Formatted("StringBuilder{ size={}, buffer=\"{}\" }", value.Size(), value.ToString()));
 	}
 };
 
