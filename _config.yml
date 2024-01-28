@@ -43,8 +43,8 @@ minima:
 
   # Generate social links in footer.
   social_links:
-    - { platform: youtube, user_url: "https://www.youtube.com/@Werner-in3ep" }
     - { platform: github, user_url: "https://github.com/werner1304" }
+    #  - { platform: youtube, user_url: "https://www.youtube.com/@Werner-in3ep" }
     #  - { platform: devto,          user_url: "https://dev.to/jekyll" }
     #  - { platform: dribbble,       user_url: "https://dribbble.com/jekyll" }
     #  - { platform: facebook,       user_url: "https://www.facebook.com/jekyll" }
